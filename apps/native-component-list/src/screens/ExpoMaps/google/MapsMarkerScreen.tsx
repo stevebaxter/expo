@@ -34,6 +34,21 @@ const MARKERS: GoogleMaps.Marker[] = [
     title: 'Marker #5',
     snippet: 'Fifth marker',
   },
+  {
+    id: 'marker-6',
+    coordinates: { latitude: 50.5, longitude: 10.5 },
+    title: 'Marker #6 (rotated)',
+    snippet: 'Rotated 45° and flat against the map',
+    rotation: 45,
+    flat: true,
+  },
+  {
+    id: 'marker-7',
+    coordinates: { latitude: 50.5, longitude: 10.8 },
+    title: 'Marker #7 (rotated, billboard)',
+    snippet: 'Rotated 45° in screen space (not flat)',
+    rotation: 45,
+  },
 ];
 
 export default function MapsMarkerScreen() {

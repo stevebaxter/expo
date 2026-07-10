@@ -43,6 +43,25 @@ const ANNOTATIONS: AppleMaps.Annotation[] = [
     textColor: 'white',
     backgroundColor: '#9b59b6',
   },
+  {
+    id: 'rotated',
+    coordinates: { latitude: 51.2362, longitude: -0.5704 },
+    title: 'Rotated (flat)',
+    text: 'RT',
+    textColor: 'white',
+    backgroundColor: '#e67e22',
+    rotation: 45,
+    flat: true,
+  },
+  {
+    id: 'rotated-billboard',
+    coordinates: { latitude: 51.2362, longitude: -0.4704 },
+    title: 'Rotated (billboard)',
+    text: 'RB',
+    textColor: 'white',
+    backgroundColor: '#2980b9',
+    rotation: 45,
+  },
 ];
 
 export default function MapsAnnotationsScreen() {
