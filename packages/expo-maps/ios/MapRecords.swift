@@ -77,6 +77,8 @@ struct MapAnnotation: Record, Identifiable {
   @Field var text: String = ""
   @Field var icon: SharedRef<UIImage>?
   @Field var anchor: MapAnchor = MapAnchor()
+  @Field var rotation: Double = 0
+  @Field var flat: Bool = false
 
   var clLocationCoordinate2D: CLLocationCoordinate2D {
     CLLocationCoordinate2D(
