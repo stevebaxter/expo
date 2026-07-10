@@ -94,6 +94,7 @@ struct AppleMapsViewiOS17: View, AppleMapsViewProtocol {
                 .foregroundStyle(annotation.textColor)
                 .padding(5)
             }
+            .rotationEffect(.degrees(annotation.rotation - (annotation.flat ? state.liveHeading : 0)))
           }
         }
 
@@ -145,6 +146,14 @@ struct AppleMapsViewiOS17: View, AppleMapsViewProtocol {
           "tilt": context.camera.pitch,
           "bearing": context.camera.heading
         ])
+      }
+      .onMapCameraChange(frequency: .continuous) { context in
+        // Private: keeps `flat` annotations aligned to the map heading live during a
+        // rotate gesture. Emits no JS event — the public onCameraMove observer above stays
+        // settle-throttled. No-ops (no state write, no re-render) when no annotation is flat.
+        if props.annotations.contains(where: { $0.flat }) {
+          state.liveHeading = context.camera.heading
+        }
       }
       .mapStyle(properties.mapType.toMapStyle(properties))
       .lookAroundViewer(
