@@ -203,6 +203,8 @@ class GoogleMapsView(context: Context, appContext: AppContext) :
             draggable = marker.draggable,
             anchor = marker.anchor.toOffset(),
             zIndex = marker.zIndex,
+            rotation = marker.rotation,
+            flat = marker.flat,
             icon = icon,
             onClick = {
               onMarkerClick(
