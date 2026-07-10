@@ -371,6 +371,20 @@ export type AppleMapsAnnotation = {
    * @default { x: 0.5, y: 0.5 }
    */
   anchor?: AppleMapsAnchor;
+  /**
+   * The rotation of the annotation in degrees clockwise from north (its default position).
+   * @default 0
+   */
+  rotation?: number;
+  /**
+   * When `true` the annotation lies flat on the map and rotates with it — its `rotation`
+   * is measured from north on the ground. When `false` (default) it is billboarded and
+   * `rotation` is applied in screen space.
+   *
+   * On iOS the flat rotation follows the map heading only; it does not tilt in perspective.
+   * @default false
+   */
+  flat?: boolean;
 } & AppleMapsMarker;
 
 /**

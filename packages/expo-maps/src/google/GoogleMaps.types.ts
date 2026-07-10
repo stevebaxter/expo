@@ -65,6 +65,20 @@ export type GoogleMapsMarker = {
   anchor?: GoogleMapsAnchor;
 
   /**
+   * The rotation of the marker in degrees clockwise from north (its default position).
+   * @default 0
+   */
+  rotation?: number;
+
+  /**
+   * When `true` the marker lies flat on the map and rotates with it — its `rotation` is
+   * measured from north on the ground. When `false` (default) it is billboarded (always
+   * facing the camera) and `rotation` is applied in screen space.
+   * @default false
+   */
+  flat?: boolean;
+
+  /**
    * The z-index to use for the marker.
    * @default 0
    */
