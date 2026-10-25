@@ -373,6 +373,10 @@ export type AppleMapsAnnotation = {
   anchor?: AppleMapsAnchor;
   /**
    * The rotation of the annotation in degrees clockwise from north (its default position).
+   *
+   * The annotation rotates about its center. On Android the equivalent marker rotates
+   * about its anchor (bottom-center by default), so an off-center anchor pivots
+   * differently between platforms.
    * @default 0
    */
   rotation?: number;

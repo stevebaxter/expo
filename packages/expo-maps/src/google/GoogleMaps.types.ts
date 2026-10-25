@@ -66,6 +66,10 @@ export type GoogleMapsMarker = {
 
   /**
    * The rotation of the marker in degrees clockwise from north (its default position).
+   *
+   * The icon rotates about its anchor (bottom-center by default). On iOS the equivalent
+   * annotation rotates about its center, so an off-center anchor pivots differently
+   * between platforms.
    * @default 0
    */
   rotation?: number;
